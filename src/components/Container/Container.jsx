@@ -1,12 +1,28 @@
-import React from "react";
+import { useState } from "react";
+import React, { useEffect } from "react";
 import Button from "../Button/Button";
 import Card from "../card/Card";
 
 import './Container.css'
 
 export default function Container(){
-    fetch("https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json")
 
+    const [cafes, setCafes] = useState([]);
+
+    const URL = 'https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json'
+
+    const ChamarApi = async () => {
+        const response = await fetch(URL);
+
+        if (response.status === 200) {
+            const obj = await response.json();
+            setCafes(obj)
+        }
+    }
+
+    useEffect(() => {
+        ChamarApi()
+    }, [])
     return(
         <div className="container">
             <section className="section__1">
@@ -22,12 +38,15 @@ export default function Container(){
                 </div>
             </section>
             <section className="cards">
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                {cafes.map((cafe, index)=>(
+                    <Card
+                        nome = {cafe.name}
+                        price = {cafe.price}
+                        rate = {cafe.rating}
+                        vote = {cafe.votes}
+                        image = {cafe.image}
+                    />
+                ))}
             </section>
         </div>
     )

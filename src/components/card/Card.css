@@ -4,9 +4,13 @@
     width: 300px;
 }
 .imagem{
-    border: 1px solid;
     height: 180px;
     border-radius: 10px;
+    overflow: hidden;
+}
+.imagem > img{
+    width: 100%;
+    height: 100%;
 }
 .nome__price{
     display: flex;
