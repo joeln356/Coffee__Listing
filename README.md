@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/preview.png" alt="Coffee Listing Banner" width="100%"/>
+  <img src="./src/assets/thumbnail.jpg" alt="Coffee Listing Banner" width="100%"/>
 </p>
 
 <h1 align="center">Coffee Listing</h1>
