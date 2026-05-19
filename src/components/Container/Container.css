@@ -6,6 +6,8 @@
     --cor3: #6F757C;
     --cor4: #BEE3CC;
     --cor5: #4D5562;
+    --cor6: #F6C768;
+    --cor7: #302522;
 }
 .container{
     background-color: var(--cor1);

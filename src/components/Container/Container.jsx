@@ -45,6 +45,8 @@ export default function Container(){
                         rate = {cafe.rating}
                         vote = {cafe.votes}
                         image = {cafe.image}
+                        popular = {cafe.popular}
+                        available = {cafe.available}
                     />
                 ))}
             </section>
